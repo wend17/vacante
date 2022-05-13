@@ -1,13 +1,15 @@
 package com.example.vacantes.service;
 
 import com.example.vacantes.model.Vacante;
+import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
-public class VacantesService implements IVacantesService{
+@Service
+public class VacantesServiceImpl implements IVacantesService{
     private List<Vacante>lista =null;
 
     public VacantesServiceImpl(){
@@ -62,6 +64,18 @@ public class VacantesService implements IVacantesService{
     @Override
     public List<Vacante> buscartodas() {
         return lista;
+    }
+
+    @Override
+    public Vacante buscarPorId(Integer idvacante) {
+
+        for (Vacante v : lista) {
+            if (v.getId() == idvacante) {
+                return v;
+            }
+        }
+        return null;
+
     }
 
 }
