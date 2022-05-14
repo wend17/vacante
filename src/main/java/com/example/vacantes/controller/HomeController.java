@@ -24,18 +24,6 @@ public class HomeController {
         return "tabla";
     }
 
-    @GetMapping("/")
-    public String mostrarHome(Model model) {
-        String nombre = "Auxiliar de Contabilidad";
-        Date fechaPub = new Date();
-        double salario = 9000.0;
-        boolean vigente = true;
-        model.addAttribute("nombre", nombre);
-        model.addAttribute("fecha", new Date());
-        model.addAttribute("salario", salario);
-        model.addAttribute("vigente", vigente);
-        return "home";
-    }
 
     @GetMapping("/listado")
     public String MostrarListado(Model model) {
@@ -58,6 +46,14 @@ public class HomeController {
         model.addAttribute("vacante", vacante);
         return "detalle";
     }
+    @GetMapping("/")
+    public String mostrarHome(Model model) {
+        List<Vacante> lista = serviceVacantes.buscartodas();
+        model.addAttribute("vacantes", lista);
+        return "home";
+    }
+
 }
+
 
 
