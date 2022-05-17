@@ -19,7 +19,7 @@ public class CategoriasController {
     //@GetMapping("/create")
     @RequestMapping(value="/create",method= RequestMethod.GET)
     public String crear (Model model){
-        return "formCategorias";
+        return "categorias/formCategorias";
     }
 
 
@@ -28,6 +28,6 @@ public class CategoriasController {
     public String guardar(@RequestParam("nombre") String nombre,@RequestParam("descripcion") String descripcion){
         System.out.println("Categoria:" + nombre);
         System.out.println("Descripcion:" + descripcion);
-        return "formCategorias";
+        return "categorias/formCategorias";
     }
 }
