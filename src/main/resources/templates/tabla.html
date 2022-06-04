@@ -29,12 +29,12 @@
         </tr>
 
         <tr th:each="temVac:${vacantes}">
-            <td><img th:src="@{/bootstrap/images/{img}(img=${temVac.imagen})}" width="100" height="100"/></td>
             <td th:text="${temVac.id}"></td>
             <td th:text="${temVac.nombre}"></td>
             <td th:text="${temVac.fecha}"></td>
             <td th:text="${temVac.salario}"></td>
             <td th:text="${temVac.descripcion}"></td>
+            <td><img th:src="@{/bootstrap/images/{img}(img=${temVac.imagen})}" width="100" height="100"/></td>
 
             <td><span th:if="${temVac.destacado==1}" class="badge bg-success">Si</span>
                 <span th:unless="${temVac.destacado==1}" class="badge bg-danger">No</span>
