@@ -10,11 +10,11 @@ import java.util.List;
 
 @Service
 public class VacantesServiceImpl implements IVacantesService{
-    private List<Vacante>lista =null;
+    private List<Vacante>lista =null; //declaro la lista como atributo
 
-    public VacantesServiceImpl(){
+    public VacantesServiceImpl(){  // 1.creamos un constructor
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        lista = new LinkedList<>();
+        lista = new LinkedList<>(); // para estar disponible en cualquier método de la clase de servicio
         try {
             Vacante vacante1 = new Vacante();
             vacante1.setId(1);

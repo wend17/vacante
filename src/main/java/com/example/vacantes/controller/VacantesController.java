@@ -19,7 +19,7 @@ public class VacantesController {
 
     @GetMapping("/view/{id}")
     public String verDetalle(@PathVariable("id") int idVacante, Model model) {
-        Vacante vacante = serviceVacantes.buscarPorId(idVacante);
+        Vacante vacante = serviceVacantes.buscarPorId(idVacante);  // declaro un obj de tipo vacante
         System.out.println("vacante: " + vacante);
         model.addAttribute("vacante", vacante);
         return "detalle";

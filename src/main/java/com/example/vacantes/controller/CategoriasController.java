@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/categorias")
+@RequestMapping("/categorias") // al nivel de la clase
 public class CategoriasController {
 
     //@GetMapping("/index")
-    @RequestMapping(value="/index",method= RequestMethod.GET)
+    @RequestMapping(value="/index",method= RequestMethod.GET) // al nivel de un método
     public String mostrarIndex(Model model){
         return "listCategorias";
     }
